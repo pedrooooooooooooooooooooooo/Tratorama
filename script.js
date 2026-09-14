@@ -1,31 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
+    const rootElement = document.documentElement; // Seleciona a tag <html>
 
-    // Lê a preferência anterior do navegador
-    const savedTheme = localStorage.getItem('theme');
+    // Recupera o tema salvo no navegador (se houver)
+    const savedTheme = localStorage.getItem('tratorama_theme');
 
-    // Aplica o tema correto no carregamento inicial
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-        themeIcon.textContent = '☀️';
-    } else {
-        document.body.classList.remove('dark-theme');
-        themeIcon.textContent = '🌙';
+    // Função que aplica o tema visualmente
+    function applyTheme(theme) {
+        if (theme === 'dark') {
+            rootElement.classList.add('dark-theme');
+            themeIcon.textContent = '☀️';
+        } else {
+            rootElement.classList.remove('dark-theme');
+            themeIcon.textContent = '🌙';
+        }
     }
 
-    // Clique para alternar entre os temas
+    // Aplica o tema salvo no carregamento
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else {
+        applyTheme('light'); // Padrão claro (fundo branco)
+    }
+
+    // Alterna o tema ao clicar no botão
     themeToggleBtn.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
+        const isDark = rootElement.classList.contains('dark-theme');
+        const newTheme = isDark ? 'light' : 'dark';
 
-        const isDark = document.body.classList.contains('dark-theme');
-
-        if (isDark) {
-            themeIcon.textContent = '☀️';
-            localStorage.setItem('theme', 'dark');
-        } else {
-            themeIcon.textContent = '🌙';
-            localStorage.setItem('theme', 'light');
-        }
+        applyTheme(newTheme);
+        localStorage.setItem('tratorama_theme', newTheme);
     });
 });

@@ -1,127 +1,189 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TRATORAMA - Robótica e Sustentabilidade Agrícola</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TRATORAMA — protótipo funcional de trator agrícola elétrico e autossustentável.">
+  <title>TRATORAMA | Futuro Sustentável</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- CABEÇALHO E NAVEGAÇÃO -->
-    <header class="navbar">
-        <div class="logo">
-            <h1>TRATORAMA</h1>
-            <span>Agrinho 2026</span>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#apresentacao">Apresentação</a></li>
-                <li><a href="#cronograma">Desenvolvimento</a></li>
-                <li><a href="#conclusao">Conclusão</a></li>
-            </ul>
-        </nav>
-        <!-- Botão com ícones SVG nativos diretamente no HTML -->
-        <button id="theme-toggle" class="theme-btn" aria-label="Alternar Tema">
-            <span id="theme-icon">🌙</span>
+  <header class="hero" id="inicio">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a class="logo" href="#inicio">TRATORAMA<span>2026</span></a>
+      <div class="nav-actions">
+        <a href="#desenvolvimento">Desenvolvimento</a>
+        <a href="#conclusao">Conclusão</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar entre tema claro e escuro" aria-pressed="false">
+          <span id="themeIcon" aria-hidden="true">☾</span>
+          <span id="themeText">Tema escuro</span>
         </button>
-    </header>
+      </div>
+    </nav>
 
-    <main>
-        <!-- SEÇÃO 1: APRESENTAÇÃO DO PROJETO COM FOTO DO PROTÓTIPO PRONTO -->
-        <section id="apresentacao" class="hero-section">
-            <div class="hero-content">
-                <span class="badge">Agro Forte, Futuro Sustentável</span>
-                <h2>Protótipo de Trator Agrícola Elétrico e Autossustentável</h2>
-                <p>
-                    O <strong>TRATORAMA</strong> é uma proposta de inovação para a agricultura familiar que alia robótica de baixo custo, reutilização de materiais e energia limpa. Movido por baterias e alimentado por energia solar fotovoltaica com controle via Bluetooth.
-                </p>
-                <div class="info-details">
-                    <p><strong>Escola:</strong> Colégio Estadual São Vicente de Paula</p>
-                    <p><strong>Orientador:</strong> Samuel Prieto de Freitas</p>
-                    <p><strong>Equipe:</strong> Pedro Henrique, Guilherme Henrique, Enzo Rissardi, Murillo Rapanhoni</p>
-                </div>
+    <div class="hero-grid container">
+      <div class="hero-copy">
+        <p class="eyebrow">AGRO FORTE • FUTURO SUSTENTÁVEL</p>
+        <h1>Um novo caminho para a <em>agricultura sustentável.</em></h1>
+        <p class="lead">
+          O TRATORAMA é um protótipo funcional de trator agrícola elétrico e autossustentável,
+          controlado via Bluetooth, desenvolvido com robótica, reaproveitamento de materiais e energia solar.
+        </p>
+        <a class="primary-btn" href="#desenvolvimento">Conheça o projeto <span>↓</span></a>
+      </div>
+
+      <div class="hero-image">
+        <!-- Substitua pelo nome da foto final do projeto -->
+        <img src="tratorama-final.jpg" alt="TRATORAMA finalizado, protótipo de trator agrícola elétrico">
+        <div class="image-label"><span></span> Protótipo finalizado</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro section container">
+      <div class="section-tag">01 / O PROJETO</div>
+      <div class="intro-grid">
+        <div>
+          <h2>Tecnologia que nasce do <span>reaproveitamento.</span></h2>
+        </div>
+        <div class="intro-text">
+          <p>
+            O projeto nasceu da reutilização da carcaça plástica de um trator de brinquedo descartado.
+            A estrutura recebeu motores DC com caixas de redução, Arduino Uno, driver Ponte H L298N e
+            módulo Bluetooth para permitir o controle sem fio por smartphone.
+          </p>
+          <p>
+            A proposta combina mobilidade elétrica, energia solar e sustentabilidade, com o conceito de
+            eletropostos rurais alimentados por painéis fotovoltaicos.
+          </p>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div><strong>01</strong><span>Protótipo funcional</span></div>
+        <div><strong>☀</strong><span>Energia solar</span></div>
+        <div><strong>BT</strong><span>Controle Bluetooth</span></div>
+        <div><strong>♻</strong><span>Reaproveitamento</span></div>
+      </div>
+    </section>
+
+    <section class="development section" id="desenvolvimento">
+      <div class="container">
+        <div class="section-tag">02 / DESENVOLVIMENTO</div>
+        <div class="section-heading">
+          <div>
+            <h2>Do descarte ao <span>protótipo.</span></h2>
+          </div>
+          <p>
+            A construção passou por etapas de estudo, adaptação mecânica, integração eletrônica,
+            instalação da placa solar e testes práticos.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article class="step">
+            <div class="step-number">01</div>
+            <div class="step-image">
+              <!-- Substitua pelo nome da foto da etapa 1 -->
+              <img src="etapa-01-desmontado.jpg" alt="Carcaça do trator de brinquedo desmontada">
             </div>
-            <div class="hero-image">
-                <img src="montagem 4 pronto.heic" alt="Foto do Tratorama Concluído">
-                <p class="caption">Figura 1: Protótipo finalizado do TRATORAMA com sistema de tração e carreta de controle.</p>
+            <div class="step-content">
+              <span>INÍCIO</span>
+              <h3>A estrutura inicial</h3>
+              <p>
+                O ponto de partida foi a carcaça plástica de um trator de brinquedo descartado,
+                que foi preparada para receber os novos componentes.
+              </p>
             </div>
-        </section>
+          </article>
 
-        <!-- SEÇÃO 2: DESENVOLVIMENTO CRONOLÓGICO DO PROJETO -->
-        <section id="cronograma" class="timeline-section">
-            <h2 class="section-title">Desenvolvimento Cronológico</h2>
-            <p class="section-subtitle">Acompanhe as etapas de transformação da carcaça descartada até o veículo robótico operacional.</p>
-
-            <div class="timeline">
-                <!-- Etapa 1 -->
-                <div class="timeline-item">
-                    <div class="timeline-number">1</div>
-                    <div class="timeline-content">
-                        <h3>1. Seleção e Triagem dos Materiais</h3>
-                        <p>Início com o reaproveitamento da carcaça plástica de um brinquedo descartado e planejamento dos componentes do kit de robótica (motores DC, rodas, chassi adaptado e chaves mecânicas).</p>
-                        <div class="timeline-img-container">
-                            <img src="montagem 1.heic" alt="Peças iniciais desarmadas sobre a mesa de trabalho">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Etapa 2 -->
-                <div class="timeline-item">
-                    <div class="timeline-number">2</div>
-                    <div class="timeline-content">
-                        <h3>2. Adaptação Mecânica e Motorização</h3>
-                        <p>Instalação das caixas de redução com motores DC de 3V-6V no eixo traseiro para fornecimento de torque ao veículo agrícola.</p>
-                        <div class="timeline-img-container">
-                            <img src="montagem  2.heic" alt="Montagem inferior dos motores DC na carcaça plástica">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Etapa 3 -->
-                <div class="timeline-item">
-                    <div class="timeline-number">3</div>
-                    <div class="timeline-content">
-                        <h3>3. Conexões Elétricas e Programação</h3>
-                        <p>Integração do microcontrolador Arduino Uno R3, Ponte H L298N e Módulo Bluetooth HC-05. Testes da lógica do programa gravado via computador.</p>
-                        <div class="timeline-img-container">
-                            <img src="montagem 3.heic" alt="Desenvolvimento do código no notebook e testes da fiação">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Etapa 4 -->
-                <div class="timeline-item">
-                    <div class="timeline-number">4</div>
-                    <div class="timeline-content">
-                        <h3>4. Finalização e Integração do Painel Solar</h3>
-                        <p>Fixação final dos componentes na carcaça e na carreta de suporte energizada por bateria Li-Ion e mini placa solar fotovoltaica para recarga em campo.</p>
-                        <div class="timeline-img-container">
-                            <img src="pronto 5.heic" alt="Visão superior do protótipo finalizado pronto para testes">
-                        </div>
-                    </div>
-                </div>
+          <article class="step reverse">
+            <div class="step-number">02</div>
+            <div class="step-image">
+              <!-- Substitua pelo nome da foto da etapa 2 -->
+              <img src="etapa-02-montagem.jpg" alt="Trator em processo de montagem dos componentes">
             </div>
-        </section>
-
-        <!-- SEÇÃO 3: CONCLUSÃO -->
-        <section id="conclusao" class="conclusion-section">
-            <h2 class="section-title">Considerações Finais</h2>
-            <div class="conclusion-card">
-                <p>
-                    O projeto <strong>TRATORAMA</strong> demonstrou com sucesso que a robótica educacional de baixo custo pode atuar como uma aliada poderosa na transição para uma agricultura sustentável e economicamente viável.
-                </p>
-                <p>
-                    A substituição do uso do óleo diesel por eletricidade renovável (com suporte a mini placas solares e o conceito de eletropostos rurais) permite reduzir significativamente os custos de produção para o pequeno agricultor familiar, minimizando a emissão de gases poluentes e promovendo a preservação ambiental.
-                </p>
+            <div class="step-content">
+              <span>MONTAGEM</span>
+              <h3>Integração mecânica e eletrônica</h3>
+              <p>
+                Foram adaptados os motores DC, o driver Ponte H, a fiação eletrônica,
+                a placa Arduino e o módulo Bluetooth.
+              </p>
             </div>
-        </section>
-    </main>
+          </article>
 
-    <footer>
-        <p>&copy; 2026 TRATORAMA - Programa Agrinho / SENAR-PR. Todos os direitos reservados.</p>
-    </footer>
+          <article class="step">
+            <div class="step-number">03</div>
+            <div class="step-image">
+              <!-- Substitua pelo nome da foto da etapa 3 -->
+              <img src="etapa-03-finalizacao.jpg" alt="TRATORAMA em fase final de montagem">
+            </div>
+            <div class="step-content">
+              <span>FINALIZAÇÃO</span>
+              <h3>Energia e testes</h3>
+              <p>
+                A mini placa solar foi fixada no teto e foram realizados testes de rodagem
+                e controle remoto em terrenos de terra simulados.
+              </p>
+            </div>
+          </article>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="components">
+          <div>
+            <span class="mini-label">TECNOLOGIA</span>
+            <h3>Componentes principais</h3>
+          </div>
+          <ul>
+            <li>Arduino Uno R3</li>
+            <li>Bluetooth HC-05</li>
+            <li>Ponte H L298N</li>
+            <li>Motores DC com redução</li>
+            <li>Mini placa solar fotovoltaica</li>
+            <li>Baterias recarregáveis Li-Ion</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="conclusion section" id="conclusao">
+      <div class="container conclusion-card">
+        <div class="section-tag">03 / CONCLUSÃO</div>
+        <div class="conclusion-grid">
+          <div>
+            <p class="eyebrow">RESULTADO</p>
+            <h2>Robótica educacional para um <span>futuro mais verde.</span></h2>
+          </div>
+          <div>
+            <p>
+              O TRATORAMA demonstrou que a robótica educacional e de baixo custo pode contribuir
+              para uma agricultura mais verde e econômica. A transformação de um brinquedo estático
+              em um protótipo funcional movido a energia limpa colocou em prática conceitos de
+              sustentabilidade e eficiência energética.
+            </p>
+            <p>
+              A proposta dos eletropostos rurais alimentados por painéis fotovoltaicos amplia a ideia,
+              buscando reduzir custos operacionais e promover a preservação ambiental em equilíbrio
+              com a produção agropecuária.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <strong>TRATORAMA</strong>
+        <p>Agro Forte, Futuro Sustentável — 2026</p>
+      </div>
+      <a href="#inicio">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

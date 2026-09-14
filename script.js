@@ -1,35 +1,22 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const rootElement = document.documentElement; // Seleciona a tag <html>
+const root = document.documentElement;
+const button = document.getElementById("themeToggle");
+const icon = document.getElementById("themeIcon");
+const text = document.getElementById("themeText");
 
-    // Recupera o tema salvo no navegador (se houver)
-    const savedTheme = localStorage.getItem('tratorama_theme');
+function applyTheme(theme) {
+  root.setAttribute("data-theme", theme);
+  const dark = theme === "dark";
+  icon.textContent = dark ? "☀" : "☾";
+  text.textContent = dark ? "Tema claro" : "Tema escuro";
+  button.setAttribute("aria-pressed", String(dark));
+  localStorage.setItem("tratorama-theme", theme);
+}
 
-    // Função que aplica o tema visualmente
-    function applyTheme(theme) {
-        if (theme === 'dark') {
-            rootElement.classList.add('dark-theme');
-            themeIcon.textContent = '☀️';
-        } else {
-            rootElement.classList.remove('dark-theme');
-            themeIcon.textContent = '🌙';
-        }
-    }
+const savedTheme = localStorage.getItem("tratorama-theme");
+const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+applyTheme(savedTheme || preferredTheme);
 
-    // Aplica o tema salvo no carregamento
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else {
-        applyTheme('light'); // Padrão claro (fundo branco)
-    }
-
-    // Alterna o tema ao clicar no botão
-    themeToggleBtn.addEventListener('click', () => {
-        const isDark = rootElement.classList.contains('dark-theme');
-        const newTheme = isDark ? 'light' : 'dark';
-
-        applyTheme(newTheme);
-        localStorage.setItem('tratorama_theme', newTheme);
-    });
+button.addEventListener("click", () => {
+  const current = root.getAttribute("data-theme");
+  applyTheme(current === "dark" ? "light" : "dark");
 });

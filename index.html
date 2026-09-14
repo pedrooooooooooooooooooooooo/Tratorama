@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRATORAMA - Robótica e Sustentabilidade Agrícola</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome para ícones (Sol, Lua, etc) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO E NAVEGAÇÃO -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>TRATORAMA</h1>
+            <span>Agrinho 2026</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#apresentacao">Apresentação</a></li>
+                <li><a href="#cronograma">Desenvolvimento</a></li>
+                <li><a href="#conclusao">Conclusão</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-btn" aria-label="Alternar Tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
+
+    <main>
+        <!-- SEÇÃO 1: APRESENTAÇÃO DO PROJETO COM FOTO DO PROTÓTIPO PRONTO -->
+        <section id="apresentacao" class="hero-section">
+            <div class="hero-content">
+                <span class="badge">Agro Forte, Futuro Sustentável</span>
+                <h2>Protótipo de Trator Agrícola Elétrico e Autossustentável</h2>
+                <p>
+                    O <strong>TRATORAMA</strong> é uma proposta de inovação para a agricultura familiar que alia robótica de baixo custo, reutilização de materiais e energia limpa. Movido por baterias e alimentado por energia solar fotovoltaica com controle via Bluetooth.
+                </p>
+                <div class="info-details">
+                    <p><strong>Escola:</strong> Colégio Estadual São Vicente de Paula</p>
+                    <p><strong>Orientador:</strong> Samuel Prieto de Freitas</p>
+                    <p><strong>Equipe:</strong> Pedro Henrique, Guilherme Henrique, Enzo Rissardi, Murillo Rapanhoni</p>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="montagem 4 pronto.heic" alt="Foto do Tratorama Concluído">
+                <p class="caption">Figura 1: Protótipo finalizado do TRATORAMA com sistema de tração e carreta de controle.</p>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: DESENVOLVIMENTO CRONOLÓGICO DO PROJETO -->
+        <section id="cronograma" class="timeline-section">
+            <h2 class="section-title">Desenvolvimento Cronológico</h2>
+            <p class="section-subtitle">Acompanhe as etapas de transformação da carcaça descartada até o veículo robótico operacional.</p>
+
+            <div class="timeline">
+                <!-- Etapa 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <div class="timeline-content">
+                        <h3>1. Seleção e Triagem dos Materiais</h3>
+                        <p>Início com o reaproveitamento da carcaça plástica de um brinquedo descartado e planejamento dos componentes do kit de robótica (motores DC, rodas, chassi adaptado e chaves mecânicas).</p>
+                        <div class="timeline-img-container">
+                            <img src="montagem 1.heic" alt="Peças iniciais desarmadas sobre a mesa de trabalho">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etapa 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <div class="timeline-content">
+                        <h3>2. Adaptação Mecânica e Motorização</h3>
+                        <p>Instalação das caixas de redução com motores DC de 3V-6V no eixo traseiro para fornecimento de torque ao veículo agrícola.</p>
+                        <div class="timeline-img-container">
+                            <img src="montagem  2.heic" alt="Montagem inferior dos motores DC na carcaça plástica">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etapa 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">3</div>
+                    <div class="timeline-content">
+                        <h3>3. Conexões Elétricas e Programação</h3>
+                        <p>Integração do microcontrolador Arduino Uno R3, Ponte H L298N e Módulo Bluetooth HC-05. Testes da lógica do programa gravado via computador.</p>
+                        <div class="timeline-img-container">
+                            <img src="montagem 3.heic" alt="Desenvolvimento do código no notebook e testes da fiação">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Etapa 4 -->
+                <div class="timeline-item">
+                    <div class="timeline-number">4</div>
+                    <div class="timeline-content">
+                        <h3>4. Finalização e Integração do Painel Solar</h3>
+                        <p>Fixação final dos componentes na carcaça e na carreta de suporte energizada por bateria Li-Ion e mini placa solar fotovoltaica para recarga em campo.</p>
+                        <div class="timeline-img-container">
+                            <img src="pronto 5.heic" alt="Visão superior do protótipo finalizado pronto para testes">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 3: CONCLUSÃO -->
+        <section id="conclusao" class="conclusion-section">
+            <h2 class="section-title">Considerações Finais</h2>
+            <div class="conclusion-card">
+                <p>
+                    O projeto <strong>TRATORAMA</strong> demonstrou com sucesso que a robótica educacional de baixo custo pode atuar como uma aliada poderosa na transição para uma agricultura sustentável e economicamente viável.
+                </p>
+                <p>
+                    A substituição do uso do óleo diesel por eletricidade renovável (com suporte a mini placas solares e o conceito de eletropostos rurais) permite reduzir significativamente os custos de produção para o pequeno agricultor familiar, minimizando a emissão de gases poluentes e promovendo a preservação ambiental.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TRATORAMA - Programa Agrinho / SENAR-PR. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,43 +1,43 @@
-/* TEMA CLARO - FUNDO BRANCO PURO E CORES NÍTIDAS */
+/* TEMA CLARO (PADRÃO) - FUNDO BRANCO PURO E CORES DE ALTO CONTRASTE */
 :root {
-    --bg-color: #ffffff;
-    --card-bg: #f4f6f8;
-    --text-color: #1a1a1a;
-    --text-muted: #555555;
-    --primary-color: #2e7d32;
-    --border-color: #dddddd;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --bg-color: #ffffff !important;
+    --card-bg: #f5f5f5 !important;
+    --text-color: #111111 !important;
+    --text-muted: #555555 !important;
+    --primary-color: #2e7d32 !important;
+    --border-color: #e0e0e0 !important;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
 }
 
-/* TEMA ESCURO */
-body.dark-theme {
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --text-color: #f0f0f0;
-    --text-muted: #aaaaaa;
-    --primary-color: #4caf50;
-    --border-color: #333333;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+/* TEMA ESCURO - ATIVADO QUANDO A CLASSE 'dark-theme' ESTIVER NO HTML */
+html.dark-theme {
+    --bg-color: #121212 !important;
+    --card-bg: #1e1e1e !important;
+    --text-color: #f0f0f0 !important;
+    --text-muted: #aaaaaa !important;
+    --primary-color: #4caf50 !important;
+    --border-color: #333333 !important;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* RESET E APLICAÇÃO GERAL */
+/* APLICAÇÃO GERAL DE ESTILOS */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.2s linear, color 0.2s linear;
 }
 
 html, body {
     width: 100%;
     min-height: 100vh;
-    background-color: var(--bg-color) !important;
+    background-color: var(--bg-color);
     color: var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
 }
 
-/* NAVBAR RESPONSIVA */
+/* NAVBAR */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -77,10 +77,11 @@ html, body {
     color: var(--primary-color);
 }
 
-/* BOTÃO DE TROCA DE TEMA */
+/* BOTÃO DE TEMA */
 .theme-btn {
     background-color: var(--card-bg);
     border: 2px solid var(--border-color);
+    color: var(--text-color);
     font-size: 1.2rem;
     cursor: pointer;
     padding: 0.4rem 0.8rem;
@@ -111,7 +112,7 @@ html, body {
 
 .badge {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: #ffffff !important;
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -191,7 +192,7 @@ html, body {
 
 .timeline-number {
     background-color: var(--primary-color);
-    color: #ffffff;
+    color: #ffffff !important;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -255,7 +256,7 @@ footer {
     margin-top: 2rem;
 }
 
-/* MEDIA QUERIES */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

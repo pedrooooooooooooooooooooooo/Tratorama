@@ -1,38 +1,34 @@
-// SELEÇÃO DOS ELEMENTOS DO DOM
-const themeToggleBtn = document.getElementById('theme-toggle');
-const themeIcon = themeToggleBtn.querySelector('i');
+// AGUARDA O CARREGAMENTO COMPLETO DO HTML
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
 
-// VERIFICA SE O USUÁRIO JÁ POSSUI PREFERÊNCIA SALVA NO STORAGE
-const savedTheme = localStorage.getItem('theme');
+    // VERIFICA SE JÁ EXISTE UMA PREFERÊNCIA SALVA
+    const currentTheme = localStorage.getItem('theme');
 
-if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateIcon(savedTheme);
-} else {
-    // PREFERÊNCIA PADRÃO DO SISTEMA
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initialTheme = prefersDark ? 'dark' : 'light';
-    document.documentElement.setAttribute('data-theme', initialTheme);
-    updateIcon(initialTheme);
-}
-
-// ALTERNÂNCIA DE TEMA CLARO/ESCURO
-themeToggleBtn.addEventListener('click', () => {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    updateIcon(newTheme);
-});
-
-// ATUALIZAÇÃO DO ÍCONE DE SOL / LUA
-function updateIcon(theme) {
-    if (theme === 'dark') {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeIcon.textContent = '☀️';
     } else {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
+        document.body.classList.remove('dark-theme');
+        themeIcon.textContent = '🌙';
     }
-}
+
+    // EVENTO DE CLIQUE NO BOTÃO
+    themeToggleBtn.addEventListener('click', () => {
+        // Alterna a classe dark-theme no elemento <body>
+        document.body.classList.toggle('dark-theme');
+
+        let theme = 'light';
+        
+        if (document.body.classList.contains('dark-theme')) {
+            theme = 'dark';
+            themeIcon.textContent = '☀️';
+        } else {
+            themeIcon.textContent = '🌙';
+        }
+
+        // Salva a escolha do usuário no navegador
+        localStorage.setItem('theme', theme);
+    });
+});

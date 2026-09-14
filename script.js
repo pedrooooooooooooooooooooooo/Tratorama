@@ -1,12 +1,12 @@
-// AGUARDA O CARREGAMENTO COMPLETO DO HTML
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const themeIcon = document.getElementById('theme-icon');
 
-    // VERIFICA SE JÁ EXISTE UMA PREFERÊNCIA SALVA
-    const currentTheme = localStorage.getItem('theme');
+    // Lê a preferência anterior do navegador
+    const savedTheme = localStorage.getItem('theme');
 
-    if (currentTheme === 'dark') {
+    // Aplica o tema correto no carregamento inicial
+    if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
         themeIcon.textContent = '☀️';
     } else {
@@ -14,21 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
         themeIcon.textContent = '🌙';
     }
 
-    // EVENTO DE CLIQUE NO BOTÃO
+    // Clique para alternar entre os temas
     themeToggleBtn.addEventListener('click', () => {
-        // Alterna a classe dark-theme no elemento <body>
         document.body.classList.toggle('dark-theme');
 
-        let theme = 'light';
-        
-        if (document.body.classList.contains('dark-theme')) {
-            theme = 'dark';
+        const isDark = document.body.classList.contains('dark-theme');
+
+        if (isDark) {
             themeIcon.textContent = '☀️';
+            localStorage.setItem('theme', 'dark');
         } else {
             themeIcon.textContent = '🌙';
+            localStorage.setItem('theme', 'light');
         }
-
-        // Salva a escolha do usuário no navegador
-        localStorage.setItem('theme', theme);
     });
 });
